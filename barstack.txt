@@ -1,0 +1,51 @@
+
+fig = go.Figure(data=[
+    go.Bar(name='Cuenta bloqueada', x=cance_X_generacion[cance_X_generacion['DESC']=='Cuenta bloqueada']['GENERACION'], y=cance_X_generacion[cance_X_generacion['DESC']=='Cuenta bloqueada']['COUNT'],text=cance_X_generacion[cance_X_generacion['DESC']=='Cuenta bloqueada']['PERC'],textposition='inside'),
+    go.Bar(name='Cuenta cancelada', x=cance_X_generacion[cance_X_generacion['DESC']=='Cuenta cancelada']['GENERACION'], y=cance_X_generacion[cance_X_generacion['DESC']=='Cuenta cancelada']['COUNT'],text=cance_X_generacion[cance_X_generacion['DESC']=='Cuenta cancelada']['PERC'],textposition='inside'),
+    go.Bar(name='Cuenta con insuficiencia de fondos', x=cance_X_generacion[cance_X_generacion['DESC']=='Cuenta con insuficiencia de fondos']['GENERACION'], y=cance_X_generacion[cance_X_generacion['DESC']=='Cuenta con insuficiencia de fondos']['COUNT'],text=cance_X_generacion[cance_X_generacion['DESC']=='Cuenta con insuficiencia de fondos']['PERC'],textposition='inside'),
+    go.Bar(name='Hold Vencido', x=cance_X_generacion[cance_X_generacion['DESC']=='Hold Vencido']['GENERACION'], y=cance_X_generacion[cance_X_generacion['DESC']=='Hold Vencido']['COUNT'],text=cance_X_generacion[cance_X_generacion['DESC']=='Hold Vencido']['PERC'],textposition='inside'),
+    go.Bar(name='Transaccion no permitida al tarjetahabiente', x=cance_X_generacion[cance_X_generacion['DESC']=='Transaccion no permitida al tarjetahabiente']['GENERACION'], y=cance_X_generacion[cance_X_generacion['DESC']=='Transaccion no permitida al tarjetahabiente']['COUNT'],text=cance_X_generacion[cance_X_generacion['DESC']=='Transaccion no permitida al tarjetahabiente']['PERC'],textposition='inside'),
+    go.Bar(name='Tarjeta Boletinada', x=cance_X_generacion[cance_X_generacion['DESC']=='Tarjeta Boletinada']['GENERACION'], y=cance_X_generacion[cance_X_generacion['DESC']=='Tarjeta Boletinada']['COUNT'],text=cance_X_generacion[cance_X_generacion['DESC']=='Tarjeta Boletinada']['PERC'],textposition='inside'),
+    go.Bar(name='Tarjeta Restringida', x=cance_X_generacion[cance_X_generacion['DESC']=='Tarjeta Restringida']['GENERACION'], y=cance_X_generacion[cance_X_generacion['DESC']=='Tarjeta Restringida']['COUNT'],text=cance_X_generacion[cance_X_generacion['DESC']=='Tarjeta Restringida']['PERC'],textposition='inside'),
+    go.Bar(name='Otros', x=cance_X_generacion[cance_X_generacion['DESC']=='Otros']['GENERACION'], y=cance_X_generacion[cance_X_generacion['DESC']=='Otros']['COUNT'],text=cance_X_generacion[cance_X_generacion['DESC']=='Otros']['PERC'],textposition='inside'),
+
+    ])
+ 
+fig.update_layout(barmode='stack') 
+fig.update_layout(title_text='test')
+fig.update_xaxes(title_text="")
+
+# fig.update_yaxes(title_text="<b>Prima Neta Total Acumulada</b>", secondary_y=False)
+# fig.update_yaxes(title_text="<b>Prima Neta Promedio</b>", secondary_y=True)
+
+fig.add_annotation(x='2019-01',y=793,text="788")
+fig.add_annotation(x='2019-02',y=717,text="712")
+fig.add_annotation(x='2019-03',y=934,text="929")
+fig.add_annotation(x='2019-04',y=772,text='767')
+fig.add_annotation(x='2019-05',y=1315,text="1,310")
+fig.add_annotation(x='2019-06',y=1220,text="1,215")
+fig.add_annotation(x='2019-07',y=1295,text="1,290")
+fig.add_annotation(x='2019-08',y=1240,text="1,235")
+fig.add_annotation(x='2019-09',y=1229,text="1,224")
+fig.add_annotation(x='2019-10',y=1435,text="1,430")
+fig.add_annotation(x='2019-11',y=1234,text="1,229")
+fig.add_annotation(x='2019-12',y=1037,text="1,032")
+fig.add_annotation(x='2020-01',y=777,text="772")
+fig.add_annotation(x='2020-02',y=738,text="733")
+fig.add_annotation(x='2020-03',y=354,text="349")
+fig.add_annotation(x='2020-04',y=16,text="11")
+
+fig.update_annotations(dict(
+            xref="x",
+            yref="y",
+            showarrow=True,
+            arrowhead=1,
+            ax=0,
+            ay=-40
+))
+       
+fig.update_layout(legend=dict(orientation="h", xanchor='left', yanchor='top'))
+fig.update_xaxes(type=('category'))
+fig.update_layout(template='simple_white')
+
+plot(fig)
